@@ -1,0 +1,30 @@
+.news-item-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 250px;
+  max-height: 50vh;
+  margin: 10px;
+}
+
+.news-item-header {
+  display: flex;
+  align-items: center;
+}
+
+.news-item-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.news-item-image {
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-item-actions {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 0;
+}
