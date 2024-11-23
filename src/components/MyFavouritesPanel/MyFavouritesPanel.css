@@ -1,11 +1,55 @@
 .my-favourites-panel {
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 4px;
-  }
-  
-  .my-favourites-panel .MuiButton-containedSecondary {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  
+  padding: 20px;
+  background-color: bisque !important;
+  border-radius: 4px;
+}
+
+.my-favourites-panel .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.favourite-item {
+  padding: 8px !important;
+  margin: 4px 0;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.favourite-item:hover {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.favourite-item .action-button {
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.favourite-item .MuiListItemText-primary {
+  font-size: 0.9rem;
+  color: #333;
+  margin-right: 16px;
+}
+
+.favourite-item .MuiListItemText-secondary {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.my-favourites-panel .MuiList-root {
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.my-favourites-panel .MuiTextField-root .MuiOutlinedInput-root {
+  background-color: white;
+}
+
+.my-favourites-panel .MuiIconButton-root {
+  padding: 4px;
+}

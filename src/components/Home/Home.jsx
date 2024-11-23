@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Button, CircularProgress } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import NewsItem from "../NewsItem/NewsItem";
 import MyFavouritesPanel from "../MyFavouritesPanel/MyFavouritesPanel";
 import "./Home.css";
 
-function Home({ articles }) {
+function Home({ articles, onLoadMore, hasMore, isLoading }) {
   const navigate = useNavigate();
   const [favorites, setFavorites] = useState([]);
 
@@ -39,14 +39,35 @@ function Home({ articles }) {
 
           {/* Display Results */}
           <Grid item lg={9.5} className="result-container">
-            <Typography variant="h6" color="primary">
-              Display Results
-            </Typography>
             <div className="articles-container">
               {articles.length > 0 ? (
-                articles.map((article, index) => (
-                  <NewsItem key={index} article={article} addFavorite={addFavorite} />
-                ))
+                <>
+                  {articles.map((article, index) => (
+                    <NewsItem
+                      key={`${article.url}-${index}`}
+                      article={article}
+                      addFavorite={addFavorite}
+                    />
+                  ))}
+                  {/* Load More Function */}
+                  <div className="load-more-container">
+                    {isLoading ? (
+                      <CircularProgress size={30} />
+                    ) : (
+                      hasMore && (
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={onLoadMore}
+                          disabled={isLoading}
+                          className="load-more-button"
+                        >
+                          Load More
+                        </Button>
+                      )
+                    )}
+                  </div>
+                </>
               ) : (
                 <Typography variant="body2" color="white">
                   No results to display.
