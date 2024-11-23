@@ -15,16 +15,16 @@
 }
 
 .result-container {
-  position: relative; 
+  position: relative;
 }
 
 .display-results {
-  position: absolute; 
-  top: 10px; 
-  left: 20px; 
-  z-index: 1; 
-  background-color: white; 
-  padding: 5px; 
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 1;
+  background-color: white;
+  padding: 5px;
 }
 
 .articles-container {
@@ -32,4 +32,16 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 40px;
+}
+
+.load-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.load-more-button {
+  min-width: 150px;
 }
